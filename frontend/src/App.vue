@@ -15,10 +15,10 @@ body {
   margin: 0;
 }
 .container {
-  min-height: calc(100vh - 70px);
+  height: calc(100vh - 70px);
   overflow: auto;
   margin: 0px;
-  background: rgb(241, 241, 241);
+  background: white;
   background-position: center;
   position: relative;
 }
