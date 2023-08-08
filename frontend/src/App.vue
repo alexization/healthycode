@@ -18,7 +18,7 @@ body {
   min-height: calc(100vh - 70px);
   overflow: auto;
   margin: 0px;
-  background: rgb(255, 255, 255);
+  background: rgb(241, 241, 241);
   background-position: center;
   position: relative;
 }
