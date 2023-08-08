@@ -31,13 +31,14 @@ export default {
 .Header {
   width: 390px;
   height: 100px;
-  position: absolute;
+  top: 0;
+  position: fixed;
 }
 .background-box {
   background: rgb(255, 255, 255);
   width: 390px;
   height: 100px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.2);
   position: absolute;
 }
 .background-box h1 {
