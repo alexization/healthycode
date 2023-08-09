@@ -10,6 +10,7 @@ export default {
     return {};
   },
   methods: {},
+  mounted() {},
 };
 </script>
 
@@ -24,7 +25,7 @@ export default {
   background: rgb(255, 255, 255);
   width: 390px;
   height: 110px;
-  box-shadow: 3px 3px 3px 0px rgba(0, 38, 255, 0.1);
+  box-shadow: 0px 3px 3px 0px rgba(0, 38, 255, 0.1);
   position: absolute;
   text-align: center;
 }
