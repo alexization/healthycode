@@ -1,19 +1,29 @@
 <template>
   <div class="Footer">
     <div class="bottom-nav">
-      <button class="home">
+      <button class="home" id="home" ref="home" @click="click_home">
         <img :src="Home" />
         <p>HOME</p>
       </button>
-      <button class="fitness">
+      <button class="fitness" id="fitness" ref="fitness" @click="click_fitness">
         <img :src="Fitness" />
         <p>FITNESS</p>
       </button>
-      <button class="statistic">
+      <button
+        class="statistic"
+        id="statistic"
+        ref="statistic"
+        @click="click_statistic"
+      >
         <img :src="Statistic" />
         <p>STATISTIC</p>
       </button>
-      <button class="calendar">
+      <button
+        class="calendar"
+        id="calendar"
+        ref="calendar"
+        @click="click_calendar"
+      >
         <img :src="Calendar" />
         <p>CALENDAR</p>
       </button>
@@ -22,10 +32,10 @@
 </template>
 
 <script>
-import Home from '@/assets/icon/home.png';
-import Fitness from '@/assets/icon/fitness.png';
-import Statistic from '@/assets/icon/statistic.png';
-import Calendar from '@/assets/icon/calendar.png';
+import Home from "@/assets/icon/home.png";
+import Fitness from "@/assets/icon/fitness.png";
+import Statistic from "@/assets/icon/statistic.png";
+import Calendar from "@/assets/icon/calendar.png";
 export default {
   data() {
     return {
@@ -35,7 +45,45 @@ export default {
       Calendar,
     };
   },
-  methods: {},
+  methods: {
+    click_home() {
+      location.href = "#/";
+    },
+    click_fitness() {
+      location.href = "#/fitness";
+    },
+    click_statistic() {
+      location.href = "#/statistic";
+    },
+    click_calendar() {
+      location.href = "#/calendar";
+    },
+  },
+  created() {},
+  mounted() {
+    const url = window.location.href.split("/");
+    const url_href = url[url.length - 1];
+    if ("" === url_href) {
+      this.$refs.home.style.background =
+        "linear-gradient(rgb(0, 38, 255, 0.4), rgb(0, 0, 255, 0.1))";
+      this.$refs.home.style.boxShadow = "3px 3px 3px 1px rgba(0, 38, 255, 0.2)";
+    } else if ("fitness" === url_href) {
+      this.$refs.fitness.style.background =
+        "linear-gradient(rgb(0, 38, 255, 0.4), rgb(0, 0, 255, 0.1))";
+      this.$refs.fitness.style.boxShadow =
+        "3px 3px 3px 1px rgba(0, 38, 255, 0.2)";
+    } else if ("statistic" === url_href) {
+      this.$refs.statistic.style.background =
+        "linear-gradient(rgb(0, 38, 255, 0.4), rgb(0, 0, 255, 0.1))";
+      this.$refs.statistic.style.boxShadow =
+        "3px 3px 3px 1px rgba(0, 38, 255, 0.2)";
+    } else {
+      this.$refs.calendar.style.background =
+        "linear-gradient(rgb(0, 38, 255, 0.4), rgb(0, 0, 255, 0.1))";
+      this.$refs.calendar.style.boxShadow =
+        "3px 3px 3px 1px rgba(0, 38, 255, 0.2)";
+    }
+  },
 };
 </script>
 
@@ -55,6 +103,9 @@ export default {
 }
 .bottom-nav button {
   flex: 1;
+  background: none;
+  box-shadow: none;
+  cursor: pointer;
 }
 .home {
   border: none;

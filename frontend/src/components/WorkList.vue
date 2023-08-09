@@ -1,20 +1,28 @@
 <template>
   <div class="WorkList">
     <button class="workbox">
-      <img class="work-img" :src="Running" />
-      <div class="work-name">Running</div>
+      <img class="work-img" :src="require(`@/assets/work/${workImg}.png`)" />
+      <div class="work-name" v-text="workName"></div>
       <img class="info" :src="Info" />
     </button>
   </div>
 </template>
 
 <script>
-import Running from '@/assets/work/running.png';
-import Info from '@/assets/icon/info.png';
+import Info from "@/assets/icon/info.png";
 export default {
+  props: {
+    workImg: {
+      type: String,
+      default: "running",
+    },
+    workName: {
+      type: String,
+      default: "Running",
+    },
+  },
   data() {
     return {
-      Running,
       Info,
     };
   },
@@ -23,7 +31,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=REM:wght@100;300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=REM:wght@100;300;500;700&display=swap");
 .WorkList {
   position: relative;
 }
@@ -39,13 +47,13 @@ export default {
   padding: 0;
   cursor: pointer;
 }
-.workbox img[class='info'] {
+.workbox img[class="info"] {
   width: 24px;
   height: 24px;
   margin-bottom: 18px;
   margin-left: 250px;
 }
-.workbox img[class='work-img'] {
+.workbox img[class="work-img"] {
   width: 70px;
   height: 70px;
 }
@@ -53,7 +61,7 @@ export default {
   position: absolute;
   left: 110px;
   bottom: 70px;
-  font-family: 'REM', sans-serif;
+  font-family: "REM", sans-serif;
   font-weight: 500;
   font-size: 20px;
 }
