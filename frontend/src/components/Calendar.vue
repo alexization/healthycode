@@ -1,6 +1,8 @@
 <template>
   <div class="Calendar">
-    <div class="calendar-box">Calendar</div>
+    <div class="calendar-box">
+      <VDatePicker view="weekly" />
+    </div>
   </div>
 </template>
 
@@ -11,6 +13,7 @@ export default {
   },
   methods: {},
   mounted() {},
+  created() {},
 };
 </script>
 

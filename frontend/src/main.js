@@ -1,9 +1,11 @@
-import { createApp } from 'vue';
-import App from './App.vue';
-import './registerServiceWorker';
-import router from './router';
-import store from './store';
-import axios from 'axios';
+import { createApp } from "vue";
+import App from "./App.vue";
+import "./registerServiceWorker";
+import router from "./router";
+import store from "./store";
+import axios from "axios";
+import "v-calendar/style.css";
+import VCalendar from "v-calendar";
 
 // createApp(App).use(router).mount('#app')
 // [앱 생성 실시]
@@ -13,5 +15,6 @@ app.config.globalProperties.$axios = axios;
 // [라우터 사용 설정]
 app.use(router);
 app.use(store);
+app.use(VCalendar, {});
 // [main 아이디 : 렌더링 시작점]
-app.mount('#app');
+app.mount("#app");
